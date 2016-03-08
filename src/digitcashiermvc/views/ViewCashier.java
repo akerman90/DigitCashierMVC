@@ -13,7 +13,7 @@ public class ViewCashier extends JFrame{
 		JButton btnLogout = new JButton("Logout");
 		btnLogout.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnLogout.setBounds(342, 13, 111, 33);
-		btnLogout.setActionCommand("Logout");
+		btnLogout.setActionCommand("LogoutCashier");
 		btnLogout.addActionListener(controller);
 		getContentPane().add(btnLogout);
 		

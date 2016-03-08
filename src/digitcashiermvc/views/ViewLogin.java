@@ -8,12 +8,15 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
+
+import javafx.scene.control.ComboBox;
+
 import java.awt.Font;
 import java.awt.event.ActionListener;
 
 public class ViewLogin extends JFrame implements Observer{
 	private JPasswordField passwordField;
-	
+	private JComboBox comboBox;
 	public ViewLogin() {
 		
 		
@@ -37,10 +40,10 @@ public class ViewLogin extends JFrame implements Observer{
 		passwordField.setBounds(127, 49, 83, 22);
 		getContentPane().add(passwordField);
 		
-		JComboBox comboBox = new JComboBox();
+		comboBox = new JComboBox(new String[]{"Cashier","Admin","Boss"});
 		comboBox.setBounds(127, 13, 83, 22);
-		
 		getContentPane().add(comboBox);
+		
 		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -58,8 +61,13 @@ public class ViewLogin extends JFrame implements Observer{
 
 	}
 	
-	public  char[] btnLoginClick(){
-		return passwordField.getPassword();
+	public char[] getPasswordFieldPassword(){
+		char[] password = passwordField.getPassword(); 
+		return password;
+	}
+	
+	public String getComboBoxSelectedItem(){
+		return (String) comboBox.getSelectedItem();
 	}
 	
 	

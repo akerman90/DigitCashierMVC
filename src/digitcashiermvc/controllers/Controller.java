@@ -3,6 +3,7 @@ package digitcashiermvc.controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import digitcashiermvc.models.AdminEmployee;
 import digitcashiermvc.models.CashierEmployee;
@@ -21,13 +22,19 @@ public class Controller implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent ae) {
-		char[] password = viewLogin.btnLoginClick();
-		if (password == cashierEmployee.getPassword()) {
-			viewLogin.dispose();
-			viewCashier.setVisible(true);
-		}
+		if (ae.getActionCommand().equals("Login")) {
+			char[] password = viewLogin.getPasswordFieldPassword();
 			
-		if (password == adminEmployee.getPassword()) {
+			if (Arrays.equals(password, cashierEmployee.getPassword()) && viewLogin.getComboBoxSelectedItem().equals("Cashier")) {
+				viewLogin.dispose();
+				viewCashier.setVisible(true);
+			}
+			
+			if (Arrays.equals(password, adminEmployee.getPassword()) && viewLogin.getComboBoxSelectedItem().equals("Admin")) {
+				viewLogin.dispose();
+				viewCashier.setVisible(true);
+			}
+		}else if (ae.getActionCommand().equals("LogoutCashier")) {
 			viewCashier.dispose();
 			viewLogin.setVisible(true);
 		}
