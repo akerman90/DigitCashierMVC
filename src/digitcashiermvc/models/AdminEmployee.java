@@ -3,7 +3,7 @@ package digitcashiermvc.models;
 
 public class AdminEmployee extends Employee{
 	
-	public AdminEmployee(char[] password) {
+	public AdminEmployee(String password) {
 		super(password);
 		
 	}

@@ -1,5 +1,6 @@
 package digitcashiermvc.views;
 
+import java.util.Arrays;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -61,9 +62,10 @@ public class ViewLogin extends JFrame implements Observer{
 
 	}
 	
-	public char[] getPasswordFieldPassword(){
-		char[] password = passwordField.getPassword(); 
-		return password;
+	public String getPasswordFieldPassword(){
+		char[] password = passwordField.getPassword();
+		String stringPassword = new String(password);
+		return stringPassword;
 	}
 	
 	public String getComboBoxSelectedItem(){

@@ -23,14 +23,14 @@ public class Controller implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 		if (ae.getActionCommand().equals("Login")) {
-			char[] password = viewLogin.getPasswordFieldPassword();
+			String password = viewLogin.getPasswordFieldPassword();
 			
-			if (Arrays.equals(password, cashierEmployee.getPassword()) && viewLogin.getComboBoxSelectedItem().equals("Cashier")) {
+			if (password.equals(cashierEmployee.getPassword()) && viewLogin.getComboBoxSelectedItem().equals("Cashier")) {
 				viewLogin.dispose();
 				viewCashier.setVisible(true);
 			}
 			
-			if (Arrays.equals(password, adminEmployee.getPassword()) && viewLogin.getComboBoxSelectedItem().equals("Admin")) {
+			if (password.equals(adminEmployee.getPassword()) && viewLogin.getComboBoxSelectedItem().equals("Admin")) {
 				viewLogin.dispose();
 				viewCashier.setVisible(true);
 			}

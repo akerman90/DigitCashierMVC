@@ -3,7 +3,7 @@ package digitcashiermvc.models;
 
 public class CashierEmployee extends Employee{
 
-	public CashierEmployee(char[] password) {
+	public CashierEmployee(String password) {
 		super(password);
 		
 	}

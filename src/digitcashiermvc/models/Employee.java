@@ -3,13 +3,13 @@ package digitcashiermvc.models;
 
 public class Employee {
 	String name;
-	char[] password;
+	String password;
 	
-	public Employee(char[] password){
+	public Employee(String password){
 		this.password = password;
 	}
 	
-	public char[] getPassword(){
+	public String getPassword(){
 		return password;
 	}
 }
